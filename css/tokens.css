@@ -1,0 +1,135 @@
+/* ============================================================
+   ДОМАШКА / DOMASHKA — design tokens
+   Маркетплейс домашней еды. p2p, тепло, доверие, гиперлокальность.
+   ============================================================ */
+
+:root{
+  /* ---- Цветовая палитра: тёплая, "домашняя", не корпоративная ---- */
+  /* Основной — терракотовый/томатный (аппетит, тепло, но не "фастфуд-красный") */
+  --clr-primary-50:  #fff4ed;
+  --clr-primary-100: #ffe4d4;
+  --clr-primary-200: #ffc4a3;
+  --clr-primary-300: #ff9d6e;
+  --clr-primary-400: #fb7a4a;
+  --clr-primary-500: #ee5a2b;   /* основной бренд-цвет */
+  --clr-primary-600: #d3441c;
+  --clr-primary-700: #ad3416;
+  --clr-primary-800: #862a15;
+  --clr-primary-900: #6c2513;
+
+  /* Дополнительный — тёплый зелёный шалфей/базилик (свежесть, натуральность) */
+  --clr-sage-50:  #f2f7ee;
+  --clr-sage-100: #e2edd6;
+  --clr-sage-200: #c6dbae;
+  --clr-sage-300: #a3c581;
+  --clr-sage-400: #82ac5e;
+  --clr-sage-500: #648f43;
+  --clr-sage-600: #4f7134;
+  --clr-sage-700: #3f592b;
+
+  /* Акцент — тёплый жёлтый/медовый (доверие, "готово", свет кухни) */
+  --clr-honey-50:  #fff9ec;
+  --clr-honey-100: #fef0cc;
+  --clr-honey-300: #fcd888;
+  --clr-honey-400: #f9c358;
+  --clr-honey-500: #f0a935;
+  --clr-honey-600: #cc8620;
+
+  /* Нейтральные — тёплый песочный/кремовый вместо холодного серого */
+  --clr-cream-0:   #fffdfb;
+  --clr-cream-50:  #fbf6f0;
+  --clr-cream-100: #f6ede2;
+  --clr-cream-200: #ece0d1;
+  --clr-sand-300:  #d9c8b4;
+  --clr-sand-400:  #b7a491;
+  --clr-brown-500: #8a7663;
+  --clr-brown-600: #6b5a4a;
+  --clr-brown-700: #4f4136;
+  --clr-brown-800: #382d26;
+  --clr-brown-900: #241c17;
+
+  /* Семантика доверия/статусов */
+  --clr-success: #4f8f5b;
+  --clr-success-bg: #e9f4e9;
+  --clr-warn: #cf7c1c;
+  --clr-warn-bg: #fdf1de;
+  --clr-danger: #c0432f;
+  --clr-danger-bg: #fbe9e5;
+  --clr-verified: #2f7bb8;
+  --clr-verified-bg: #e7f1fa;
+
+  /* Светлая тема — базовые роли */
+  --bg-app: var(--clr-cream-50);
+  --bg-surface: var(--clr-cream-0);
+  --bg-surface-2: var(--clr-cream-100);
+  --text-primary: var(--clr-brown-800);
+  --text-secondary: var(--clr-brown-600);
+  --text-muted: var(--clr-sand-400);
+  --border-soft: var(--clr-cream-200);
+  --border-strong: var(--clr-sand-300);
+
+  /* Типографика */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --fs-h1: 32px;
+  --fs-h2: 26px;
+  --fs-h3: 21px;
+  --fs-h4: 18px;
+  --fs-body-lg: 17px;
+  --fs-body: 15px;
+  --fs-small: 13px;
+  --fs-caption: 11.5px;
+
+  /* Радиусы — мягкие, "домашние", не острые корпоративные */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* Тени — мягкие, тёплые */
+  --shadow-sm: 0 1px 3px rgba(56, 45, 38, 0.08);
+  --shadow-md: 0 6px 20px rgba(56, 45, 38, 0.10);
+  --shadow-lg: 0 14px 36px rgba(56, 45, 38, 0.14);
+  --shadow-glow-primary: 0 8px 24px rgba(238, 90, 43, 0.28);
+
+  /* Отступы шкала */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-7: 32px;
+  --sp-8: 40px;
+
+  --transition-fast: 160ms cubic-bezier(.4,0,.2,1);
+  --transition-med: 280ms cubic-bezier(.4,0,.2,1);
+  --transition-spring: 420ms cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ---- Тёмная тема (обязательна минимум для покупательской части) ---- */
+[data-theme="dark"]{
+  --bg-app: #1c1713;
+  --bg-surface: #241d18;
+  --bg-surface-2: #2c231d;
+  --text-primary: #f5ece2;
+  --text-secondary: #cbb8a6;
+  --text-muted: #8a7363;
+  --border-soft: #362c24;
+  --border-strong: #4a3c31;
+
+  --clr-primary-500: #ff7a49;
+  --clr-primary-400: #ff9468;
+  --clr-primary-600: #ff5f28;
+
+  --clr-success-bg: #21301f;
+  --clr-warn-bg: #332810;
+  --clr-danger-bg: #34201b;
+  --clr-verified-bg: #1c2a34;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0, 0.35);
+  --shadow-md: 0 6px 20px rgba(0,0,0, 0.4);
+  --shadow-lg: 0 14px 36px rgba(0,0,0, 0.5);
+}
