@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Интерактивный прототип | Соседи</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/prototype.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo"><span class="mark"><i class="fa-solid fa-kitchen-set"></i></span>Соседи</a>
+  <nav class="site-nav">
+    <a href="index.html">Обзор проекта</a>
+    <a href="flows.html">User Flow</a>
+    <a href="prototype.html" class="active">Прототип</a>
+    <a href="ui-kit.html">UI-кит</a>
+    <a href="rationale.html">Обоснование</a>
+  </nav>
+  <div class="theme-toggle" id="themeToggle">
+    <button data-theme="light" class="active"><i class="fa-solid fa-sun"></i></button>
+    <button data-theme="dark"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
+
+<div class="proto-shell">
+  <!-- ============ SIDEBAR: карта экранов ============ -->
+  <aside class="proto-sidebar">
+    <div class="role-switcher" id="roleSwitcher">
+      <button data-role="buyer" class="active"><i class="fa-solid fa-basket-shopping"></i> Покупатель</button>
+      <button data-role="cook"><i class="fa-solid fa-kitchen-set"></i> Повар</button>
+    </div>
+
+    <div id="buyerScreens">
+      <h5>Онбординг</h5>
+      <div class="screen-list">
+        <button data-screen="onb-1" class="active"><i class="fa-solid fa-play"></i> Приветствие</button>
+        <button data-screen="onb-2"><i class="fa-solid fa-location-dot"></i> Гиперлокальность</button>
+        <button data-screen="onb-3"><i class="fa-solid fa-shield-heart"></i> Доверие</button>
+      </div>
+      <h5>Поиск и лента</h5>
+      <div class="screen-list">
+        <button data-screen="feed"><i class="fa-solid fa-house"></i> Лента рядом с вами</button>
+      </div>
+      <h5>Повар и блюдо</h5>
+      <div class="screen-list">
+        <button data-screen="cook-profile"><i class="fa-solid fa-user"></i> Профиль повара</button>
+        <button data-screen="dish-detail"><i class="fa-solid fa-bowl-food"></i> Карточка блюда</button>
+        <button data-screen="sold-out"><i class="fa-solid fa-ban"></i> Состояние «распродано»</button>
+      </div>
+      <h5>Заказ</h5>
+      <div class="screen-list">
+        <button data-screen="checkout"><i class="fa-solid fa-basket-shopping"></i> Оформление заказа</button>
+        <button data-screen="tracking"><i class="fa-solid fa-route"></i> Отслеживание заказа</button>
+      </div>
+      <h5>Профиль</h5>
+      <div class="screen-list">
+        <button data-screen="buyer-profile"><i class="fa-solid fa-gear"></i> Профиль / настройки</button>
+      </div>
+    </div>
+
+    <div id="cookScreens" class="group-hidden">
+      <h5>Кабинет повара</h5>
+      <div class="screen-list">
+        <button data-screen="cook-today" class="active"><i class="fa-solid fa-sun"></i> Сегодня</button>
+        <button data-screen="cook-orders"><i class="fa-solid fa-list-check"></i> Заказы</button>
+        <button data-screen="cook-dishes"><i class="fa-solid fa-utensils"></i> Мои блюда</button>
+      </div>
+      <h5>Добавление блюда</h5>
+      <div class="screen-list">
+        <button data-screen="add-1"><i class="fa-solid fa-camera"></i> Шаг 1 — фото и название</button>
+        <button data-screen="add-2"><i class="fa-solid fa-tag"></i> Шаг 2 — цена и порции</button>
+        <button data-screen="add-3"><i class="fa-solid fa-clock"></i> Шаг 3 — время готовности</button>
+        <button data-screen="add-done"><i class="fa-solid fa-check"></i> Готово, опубликовано</button>
+      </div>
+      <h5>Профиль</h5>
+      <div class="screen-list">
+        <button data-screen="cook-profile-settings"><i class="fa-solid fa-gear"></i> Профиль повара</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ STAGE: телефон ============ -->
+  <div class="proto-stage">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-inner">
+        <div class="phone-statusbar">
+          <span id="clock">9:41</span>
+          <span><i class="fa-solid fa-signal"></i> <i class="fa-solid fa-wifi" style="margin-left:6px;"></i> <i class="fa-solid fa-battery-full" style="margin-left:6px;"></i></span>
+        </div>
+
+        <div class="app-viewport" id="appViewport">
+          <!-- Экраны генерируются в screens.js -->
+        </div>
+
+        <div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toastText">Готово</span></div>
+      </div>
+    </div>
+    <p class="stage-caption" id="stageCaption">👆 Кликайте по элементам экрана и по списку слева, чтобы пройти сценарий <b>покупателя</b>.</p>
+  </div>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/screens-data.js"></script>
+<script src="js/prototype.js"></script>
+</body>
+</html>

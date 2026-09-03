@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI-кит | Соседи</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/prototype.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<style>
+  .kit-hero{padding:48px 0 10px;}
+  .kit-hero h1{font-size:36px;margin-bottom:14px;}
+  .kit-section{padding:44px 0;border-top:1px solid var(--border-soft);}
+  .kit-section:first-of-type{border-top:none;}
+  .kit-section h2{margin-bottom:8px;}
+  .kit-section > p{max-width:640px;margin-bottom:28px;}
+
+  /* Color swatches */
+  .swatch-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
+  .swatch{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--border-soft);}
+  .swatch .fill{height:64px;}
+  .swatch .label{padding:8px 10px;background:var(--bg-surface);}
+  .swatch .label b{font-size:11.5px;display:block;}
+  .swatch .label span{font-size:10.5px;color:var(--text-muted);}
+  .swatch-row-title{font-size:13px;font-weight:700;margin:20px 0 10px;color:var(--text-secondary);}
+
+  /* Typography */
+  .type-row{display:flex;align-items:baseline;gap:20px;padding:16px 0;border-bottom:1px solid var(--border-soft);}
+  .type-row .t-sample{flex:1;}
+  .type-row .t-meta{width:200px;font-size:12px;color:var(--text-muted);text-align:right;flex-shrink:0;}
+
+  /* Component showcase grid */
+  .showcase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .showcase-card{background:var(--bg-surface);border:1px solid var(--border-soft);border-radius:var(--r-lg);padding:24px;}
+  .showcase-card h5{font-size:12.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);margin-bottom:16px;font-family:var(--font-body);}
+  .showcase-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+
+  .badge-showcase{display:flex;flex-direction:column;gap:10px;}
+
+  .icon-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:16px;text-align:center;}
+  .icon-grid div{padding:14px 6px;border-radius:var(--r-md);background:var(--bg-surface);border:1px solid var(--border-soft);}
+  .icon-grid i{font-size:18px;color:var(--clr-primary-500);margin-bottom:8px;display:block;}
+  .icon-grid span{font-size:10px;color:var(--text-muted);}
+
+  @media(max-width:900px){
+    .swatch-grid{grid-template-columns:repeat(3,1fr);}
+    .showcase-grid{grid-template-columns:1fr;}
+    .icon-grid{grid-template-columns:repeat(4,1fr);}
+    .type-row{flex-direction:column;gap:4px;}
+    .type-row .t-meta{width:auto;text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo"><span class="mark"><i class="fa-solid fa-kitchen-set"></i></span>Соседи</a>
+  <nav class="site-nav">
+    <a href="index.html">Обзор проекта</a>
+    <a href="flows.html">User Flow</a>
+    <a href="prototype.html">Прототип</a>
+    <a href="ui-kit.html" class="active">UI-кит</a>
+    <a href="rationale.html">Обоснование</a>
+  </nav>
+  <div class="theme-toggle" id="themeToggle">
+    <button data-theme="light" class="active"><i class="fa-solid fa-sun"></i></button>
+    <button data-theme="dark"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
+
+<main class="container">
+  <section class="kit-hero">
+    <div class="eyebrow"><i class="fa-solid fa-palette"></i> UI-кит</div>
+    <h1>Цвет, типографика и компоненты</h1>
+    <p style="max-width:640px;">Тёплая, «домашняя» палитра вместо холодного корпоративного брендинга; выразительная типографика; компоненты доверия — бейджи верификации, детализированный рейтинг, индикаторы живой доступности.</p>
+  </section>
+
+  <!-- COLORS -->
+  <section class="kit-section">
+    <h2>Цветовая палитра</h2>
+    <p>Терракотовый — аппетит и тепло, шалфейный — свежесть и натуральность, медовый — доверие и «готовность», песочные нейтральные вместо холодного серого.</p>
+
+    <div class="swatch-row-title">Primary · Терракот</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="fill" style="background:var(--clr-primary-300);"></div><div class="label"><b>300</b><span>#ff9d6e</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-primary-400);"></div><div class="label"><b>400</b><span>#fb7a4a</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-primary-500);"></div><div class="label"><b>500 · база</b><span>#ee5a2b</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-primary-600);"></div><div class="label"><b>600</b><span>#d3441c</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-primary-700);"></div><div class="label"><b>700</b><span>#ad3416</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-primary-50);"></div><div class="label"><b>50</b><span>#fff4ed</span></div></div>
+    </div>
+
+    <div class="swatch-row-title">Secondary · Шалфей</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="fill" style="background:var(--clr-sage-300);"></div><div class="label"><b>300</b><span>#a3c581</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-sage-400);"></div><div class="label"><b>400</b><span>#82ac5e</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-sage-500);"></div><div class="label"><b>500 · база</b><span>#648f43</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-sage-600);"></div><div class="label"><b>600</b><span>#4f7134</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-sage-100);"></div><div class="label"><b>100</b><span>#e2edd6</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-sage-50);"></div><div class="label"><b>50</b><span>#f2f7ee</span></div></div>
+    </div>
+
+    <div class="swatch-row-title">Accent · Мёд + нейтральные песочные</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="fill" style="background:var(--clr-honey-400);"></div><div class="label"><b>400</b><span>#f9c358</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-honey-500);"></div><div class="label"><b>500 · база</b><span>#f0a935</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-cream-100);"></div><div class="label"><b>cream-100</b><span>#f6ede2</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-sand-300);"></div><div class="label"><b>sand-300</b><span>#d9c8b4</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-brown-600);"></div><div class="label"><b>brown-600</b><span>#6b5a4a</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-brown-800);"></div><div class="label"><b>brown-800</b><span>#382d26</span></div></div>
+    </div>
+
+    <div class="swatch-row-title">Семантика (доверие / статусы)</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="fill" style="background:var(--clr-success);"></div><div class="label"><b>Success</b><span>заказ готов</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-warn);"></div><div class="label"><b>Warning</b><span>готовится / скоро закончится</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-danger);"></div><div class="label"><b>Danger</b><span>отменено / распродано</span></div></div>
+      <div class="swatch"><div class="fill" style="background:var(--clr-verified);"></div><div class="label"><b>Verified</b><span>верификация личности</span></div></div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="kit-section">
+    <h2>Типографика</h2>
+    <p>Заголовки — Fraunces (тёплая, «человечная» антиква с характером, не безликий гротеск), текст — Inter для чёткой читаемости на маленьких экранах и у пользователей старшего возраста.</p>
+
+    <div class="type-row"><div class="t-sample"><h1 style="font-size:32px;">Готовят соседи. Едят соседи.</h1></div><div class="t-meta">H1 · Fraunces 600 · 32px</div></div>
+    <div class="type-row"><div class="t-sample"><h2 style="font-size:26px;">Профиль повара Анны</h2></div><div class="t-meta">H2 · Fraunces 600 · 26px</div></div>
+    <div class="type-row"><div class="t-sample"><h3 style="font-size:21px;">Борщ по-домашнему</h3></div><div class="t-meta">H3 · Fraunces 600 · 21px</div></div>
+    <div class="type-row"><div class="t-sample" style="font-family:var(--font-body);font-size:17px;font-weight:600;">Осталось 3 порции · готово к 14:00</div><div class="t-meta">Body Large · Inter 600 · 17px</div></div>
+    <div class="type-row"><div class="t-sample" style="font-family:var(--font-body);font-size:15px;color:var(--text-secondary);">Наваристый борщ на говяжьем бульоне, со сметаной и зеленью.</div><div class="t-meta">Body · Inter 400 · 15px</div></div>
+    <div class="type-row"><div class="t-sample" style="font-family:var(--font-body);font-size:13px;color:var(--text-muted);">800 м от вас · обычно отвечает за 3 минуты</div><div class="t-meta">Small · Inter 500 · 13px</div></div>
+    <div class="type-row"><div class="t-sample" style="font-family:var(--font-body);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--clr-primary-600);">Личность проверена</div><div class="t-meta">Caption / Badge · Inter 700 · 11.5px</div></div>
+  </section>
+
+  <!-- COMPONENTS: buttons & chips -->
+  <section class="kit-section">
+    <h2>Кнопки, чипы, переключатели</h2>
+    <p>Крупные тап-зоны (мин. 44px), скруглённые формы — для комфортного использования, включая пользователей старшего возраста.</p>
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <h5>Кнопки</h5>
+        <div class="showcase-row" style="flex-direction:column;align-items:stretch;">
+          <button class="btn btn-primary">Добавить в заказ</button>
+          <button class="btn btn-ghost">Пропустить</button>
+          <button class="btn btn-primary btn-sm" style="align-self:flex-start;">Небольшая кнопка</button>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <h5>Чипы фильтров</h5>
+        <div class="showcase-row">
+          <div class="chip chip-primary"><i class="fa-solid fa-sliders"></i> Радиус: 1.5 км</div>
+          <div class="chip active">Готово сейчас</div>
+          <div class="chip">Веган</div>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <h5>Переключатель (Switch)</h5>
+        <div class="showcase-row">
+          <span class="switch on"></span>
+          <span class="switch"></span>
+          <span style="font-size:12.5px;color:var(--text-muted);">Доступность блюда сегодня</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BADGES -->
+  <section class="kit-section">
+    <h2>Бейджи доверия и верификации</h2>
+    <p>Главный компонент доверия в продукте. Формулировки — человеческим языком, без канцелярита («Личность проверена», а не «KYC verified»).</p>
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <h5>На профиле повара</h5>
+        <div class="badge-showcase">
+          <span class="trust-badge identity"><i class="fa-solid fa-shield-check"></i> Личность проверена</span>
+          <span class="trust-badge selfemployed"><i class="fa-solid fa-file-invoice"></i> Самозанятая</span>
+          <span class="trust-badge kitchen"><i class="fa-solid fa-camera"></i> Кухня подтверждена фото</span>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <h5>Детализированный рейтинг</h5>
+        <div class="rating-detail">
+          <div class="rating-detail-row"><span class="label">Вкус</span><div class="bar-track"><div class="bar-fill" style="width:98%;"></div></div><span class="val">4.9</span></div>
+          <div class="rating-detail-row"><span class="label">Как на фото</span><div class="bar-track"><div class="bar-fill" style="width:94%;"></div></div><span class="val">4.7</span></div>
+          <div class="rating-detail-row"><span class="label">Упаковка</span><div class="bar-track"><div class="bar-fill" style="width:96%;"></div></div><span class="val">4.8</span></div>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <h5>Живая доступность порций</h5>
+        <div class="badge-showcase">
+          <span class="portions-badge" style="position:static;display:inline-flex;width:fit-content;"><i class="fa-solid fa-bowl-food"></i> Осталось 5 порций</span>
+          <span class="portions-badge low" style="position:static;display:inline-flex;width:fit-content;"><i class="fa-solid fa-fire"></i> Осталось 2 — разбирают быстро</span>
+          <span class="portions-badge soldout" style="position:static;display:inline-flex;width:fit-content;"><i class="fa-solid fa-ban"></i> Распродано на сегодня</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER STATUS -->
+  <section class="kit-section">
+    <h2>Индикаторы статуса заказа</h2>
+    <p>Единый визуальный язык статусов — от ленты повара до трекинга покупателя.</p>
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <h5>Статус-пилюли</h5>
+        <div class="showcase-row" style="flex-direction:column;align-items:flex-start;gap:12px;">
+          <span class="status-pill new">Новый заказ</span>
+          <span class="status-pill cooking">Готовится</span>
+          <span class="status-pill ready">Готов к выдаче</span>
+        </div>
+      </div>
+      <div class="showcase-card" style="grid-column:span 2;">
+        <h5>Степпер отслеживания</h5>
+        <div class="stepper" style="padding:0;">
+          <div class="step-item done"><div class="step-dot"><i class="fa-solid fa-check"></i></div><div class="step-body"><b>Принят</b><span>13:32</span></div></div>
+          <div class="step-item current"><div class="step-dot"><i class="fa-solid fa-fire"></i></div><div class="step-body"><b>Готовится</b><span>~20 минут</span></div></div>
+          <div class="step-item"><div class="step-dot"><i class="fa-solid fa-house"></i></div><div class="step-body"><b>Получено</b><span>Оставьте отзыв</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARD COMPONENT -->
+  <section class="kit-section">
+    <h2>Карточка блюда (ключевой компонент)</h2>
+    <p>Крупное «аппетитное» фото как визуальный якорь, повар виден сразу под названием, статус доступности — на фото, не спрятан.</p>
+    <div style="max-width:420px;">
+      <div class="dish-card">
+        <div class="thumb-wrap"><img src="images/dish-plov.jpg" alt=""><div class="portions-badge low"><i class="fa-solid fa-fire"></i> Осталось 2</div></div>
+        <div class="info">
+          <h4>Плов узбекский с бараниной</h4>
+          <div class="cook-mini"><img src="images/cook-man1.jpg" alt=""><span>Тимур Каримов</span><i class="fa-solid fa-circle-check verified-dot"></i></div>
+          <div class="rating-line"><span class="stars"><i class="fa-solid fa-star"></i></span> <b style="color:var(--text-primary);">4.8</b> · 96 отзывов</div>
+          <div class="dish-meta-row">
+            <div><div class="dish-price">420 ₽</div><div class="dish-eta"><i class="fa-solid fa-location-dot"></i> 1.2 км · готово к 13:30</div></div>
+            <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ICONS -->
+  <section class="kit-section">
+    <h2>Иконография</h2>
+    <p>Font Awesome Solid — округлые, дружелюбные формы, консистентные по толщине штриха.</p>
+    <div class="icon-grid">
+      <div><i class="fa-solid fa-kitchen-set"></i><span>кухня</span></div>
+      <div><i class="fa-solid fa-shield-check"></i><span>верификация</span></div>
+      <div><i class="fa-solid fa-location-dot"></i><span>локация</span></div>
+      <div><i class="fa-solid fa-bowl-food"></i><span>блюдо</span></div>
+      <div><i class="fa-solid fa-fire"></i><span>ограничено</span></div>
+      <div><i class="fa-solid fa-star"></i><span>рейтинг</span></div>
+      <div><i class="fa-solid fa-basket-shopping"></i><span>заказ</span></div>
+      <div><i class="fa-solid fa-route"></i><span>трекинг</span></div>
+    </div>
+  </section>
+
+  <div style="text-align:center;padding:30px 0 60px;">
+    <a href="prototype.html" class="btn btn-primary"><i class="fa-solid fa-mobile-screen-button"></i> Посмотреть компоненты в реальных экранах</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Дизайн-проект «Соседи» — маркетплейс домашней еды · UI-кит v1.0
+</footer>
+
+<script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Обоснование дизайн-решений | Соседи</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<style>
+  .rat-hero{padding:48px 0 10px;}
+  .rat-hero h1{font-size:36px;margin-bottom:14px;}
+  .rat-hero p{max-width:660px;}
+
+  .rat-block{display:grid;grid-template-columns:340px 1fr;gap:40px;padding:44px 0;border-top:1px solid var(--border-soft);}
+  .rat-block:first-of-type{border-top:none;}
+  .rat-block .rat-visual{border-radius:var(--r-xl);overflow:hidden;background:var(--bg-surface-2);}
+  .rat-block .rat-visual img{width:100%;height:280px;object-fit:cover;}
+  .rat-num{font-family:var(--font-display);font-size:14px;color:var(--clr-primary-500);font-weight:700;margin-bottom:10px;display:block;}
+  .rat-block h2{margin-bottom:14px;}
+  .rat-why{background:var(--bg-surface-2);border-radius:var(--r-md);padding:16px 18px;margin-top:16px;}
+  .rat-why b{color:var(--clr-primary-600);font-size:13px;display:block;margin-bottom:6px;}
+  .rat-why p{font-size:13px;}
+  .rat-list{display:flex;flex-direction:column;gap:10px;margin-top:16px;}
+  .rat-list li{display:flex;gap:10px;font-size:14px;color:var(--text-secondary);}
+  .rat-list i{color:var(--clr-primary-500);margin-top:3px;flex-shrink:0;}
+
+  .avoid-box{
+    background:var(--clr-danger-bg);border-radius:var(--r-lg);padding:26px;margin:44px 0;
+    display:flex;gap:16px;align-items:flex-start;
+  }
+  .avoid-box i{font-size:22px;color:var(--clr-danger);margin-top:2px;}
+  .avoid-box h4{margin-bottom:8px;}
+  .avoid-box ul{display:flex;flex-direction:column;gap:6px;}
+  .avoid-box li{font-size:13.5px;color:var(--text-secondary);}
+
+  @media(max-width:900px){
+    .rat-block{grid-template-columns:1fr;}
+    .rat-block .rat-visual img{height:220px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo"><span class="mark"><i class="fa-solid fa-kitchen-set"></i></span>Соседи</a>
+  <nav class="site-nav">
+    <a href="index.html">Обзор проекта</a>
+    <a href="flows.html">User Flow</a>
+    <a href="prototype.html">Прототип</a>
+    <a href="ui-kit.html">UI-кит</a>
+    <a href="rationale.html" class="active">Обоснование</a>
+  </nav>
+  <div class="theme-toggle" id="themeToggle">
+    <button data-theme="light" class="active"><i class="fa-solid fa-sun"></i></button>
+    <button data-theme="dark"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</header>
+
+<main class="container">
+  <section class="rat-hero">
+    <div class="eyebrow"><i class="fa-solid fa-lightbulb"></i> Обоснование</div>
+    <h1>Почему дизайн сделан именно так</h1>
+    <p>Не только «что показано», но и «зачем» — особенно там, где решение касается доверия и верификации, потому что именно это отличает продукт от обычной доставки еды.</p>
+  </section>
+
+  <section class="rat-block">
+    <div class="rat-visual"><img src="images/cook-woman1.jpg" alt="Повар Анна на своей кухне"></div>
+    <div>
+      <span class="rat-num">01 / ДОВЕРИЕ КАК ФУНДАМЕНТ</span>
+      <h2>Профиль повара строится как «личность», а не «точка продаж»</h2>
+      <p>Покупатель платит незнакомому человеку за еду, приготовленную дома, без ресторанной проверки санстанции. Это принципиально другая транзакция доверия, чем заказ в сетевом ресторане — и дизайн должен явно это признавать, а не маскировать под привычный каталог.</p>
+      <ul class="rat-list">
+        <li><i class="fa-solid fa-check"></i>Первый крупный элемент на экране повара — фотография человека (не блюда), затем короткая личная история и специализация.</li>
+        <li><i class="fa-solid fa-check"></i>Бейджи верификации сформулированы на человеческом языке («Личность проверена», «Кухня подтверждена фото») — не канцелярским («KYC passed»).</li>
+        <li><i class="fa-solid fa-check"></i>Рейтинг разбит на 4 конкретных критерия (вкус, соответствие фото, упаковка, время) — общая «звёздочка» ничего не говорит о том, чему конкретно можно доверять.</li>
+      </ul>
+      <div class="rat-why">
+        <b>Почему это важно бизнесу</b>
+        <p>На p2p-платформах барьер входа для покупателя — не цена, а тревога «а вдруг это разово и несерьёзно». Явные, но не бюрократичные сигналы доверия напрямую снижают этот барьер и повышают конверсию в первый заказ.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rat-block">
+    <div class="rat-visual"><img src="images/customer-woman1.jpg" alt="UGC отзыв покупателя"></div>
+    <div>
+      <span class="rat-num">02 / UGC-ФОТО КАК СОЦИАЛЬНОЕ ДОКАЗАТЕЛЬСТВО</span>
+      <h2>Фото от покупателей встроены прямо в карточку повара и блюда, рядом со студийными</h2>
+      <p>Студийное фото блюда показывает «как задумано», фото покупателя показывает «как получилось на самом деле» — и именно второе снимает главный страх: «а придёт ли то, что на картинке».</p>
+      <ul class="rat-list">
+        <li><i class="fa-solid fa-check"></i>Горизонтальная лента UGC-фото размещена сразу после блока с рейтингом — не спрятана в отдельную вкладку «отзывы».</li>
+        <li><i class="fa-solid fa-check"></i>В отзывах фото прикреплены прямо к тексту, а не отдельной галереей — сохраняется контекст «кто, что сказал, что показал».</li>
+      </ul>
+      <div class="rat-why">
+        <b>Почему это важно бизнесу</b>
+        <p>На платформах хендмейд/маркетплейс-типа (Etsy, Авито) UGC исторически повышает конверсию сильнее, чем улучшение студийной съёмки — потому что закрывает вопрос достоверности, а не эстетики.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rat-block">
+    <div class="rat-visual"><img src="images/dish-borscht.jpg" alt="Карта расстояния до повара"></div>
+    <div>
+      <span class="rat-num">03 / ГИПЕРЛОКАЛЬНОСТЬ КАК ПЕРВИЧНЫЙ ФИЛЬТР</span>
+      <h2>Радиус поиска — крупный элемент на главном экране, а не настройка в меню</h2>
+      <p>Домашняя еда физически хуже переносит долгую транспортировку, чем ресторанная доставка на darkkitchen-логистике. Расстояние здесь — не «удобство», а фактор качества блюда, которое доедет тёплым или остывшим.</p>
+      <ul class="rat-list">
+        <li><i class="fa-solid fa-check"></i>Слайдер радиуса закреплён прямо под фильтрами ленты, всегда виден без дополнительных тапов.</li>
+        <li><i class="fa-solid fa-check"></i>На карточке блюда расстояние стоит рядом с ценой — равноценный по важности параметр решения о покупке.</li>
+        <li><i class="fa-solid fa-check"></i>В оформлении заказа — визуальная мини-карта «повар → вы» с честной оценкой времени в пути.</li>
+      </ul>
+      <div class="rat-why">
+        <b>Почему это важно бизнесу</b>
+        <p>Гиперлокальность — это и ограничение продукта, и его сильная сторона: «еда от соседа за углом» звучит убедительнее и роднее, чем «еда от повара из другого конца города» — дизайн должен усиливать это, а не извиняться за радиус.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rat-block">
+    <div class="rat-visual"><img src="images/dish-khinkali.jpg" alt="Состояние распродано"></div>
+    <div>
+      <span class="rat-num">04 / ЖИВОЙ, А НЕ ВИТРИННЫЙ ТОВАР</span>
+      <h2>«Осталось 3 порции» и «Распродано» — не техническая деталь, а часть истории</h2>
+      <p>У повара нет бесконечного склада — есть конкретное количество порций и конкретное время. Мы показываем это честно и превращаем в позитивный сигнал живости продукта, а не в фрустрацию.</p>
+      <ul class="rat-list">
+        <li><i class="fa-solid fa-check"></i>Бейдж доступности меняет цвет и текст по мере убывания порций (обычный → «горит» при ≤2 → «распродано»), давая честную прозрачность без искусственного давления таймером.</li>
+        <li><i class="fa-solid fa-check"></i>Экран «распродано» сформулирован как хорошая новость («всё разобрали 🎉»), а не как ошибка, и сразу предлагает подписку на новую партию + похожие блюда рядом.</li>
+      </ul>
+      <div class="rat-why">
+        <b>Почему это важно бизнесу</b>
+        <p>Состояние «раскуплено» на p2p-платформе — сигнал качества повара, а не сбой сервиса. Правильная подача превращает разочарование в доверие («значит, действительно вкусно») и удерживает покупателя через подписку вместо потери его внимания.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rat-block">
+    <div class="rat-visual"><img src="images/dish-plov.jpg" alt="Тёплая палитра"></div>
+    <div>
+      <span class="rat-num">05 / ТЁПЛАЯ ЭСТЕТИКА ВМЕСТО КОРПОРАТИВНОГО КАТАЛОГА</span>
+      <h2>Терракот + шалфей + песочные нейтральные вместо холодного деливери-брендинга</h2>
+      <p>Классический жёлто-чёрный/сине-белый язык доставки еды считывается как «конвейер». Мы выбрали палитру, которая ассоциируется с самой едой и домашней кухней — терракот томатов и специй, шалфейная зелень трав, медовые и песочные тона деревянного стола.</p>
+      <ul class="rat-list">
+        <li><i class="fa-solid fa-check"></i>Заголовки набраны шрифтом Fraunces — тёплой антиквой с характером, а не безликим корпоративным гротеском.</li>
+        <li><i class="fa-solid fa-check"></i>Скругления — мягкие и крупные (16–28px), без острых корпоративных углов.</li>
+        <li><i class="fa-solid fa-check"></i>Тени тёплые (коричневый оттенок вместо серого/чёрного) — усиливают ощущение уюта, а не техничности.</li>
+      </ul>
+      <div class="rat-why">
+        <b>Почему это важно бизнесу</b>
+        <p>Визуальная дифференциация от Яндекс.Еды/Delivery Club/Uber Eats — это не только эстетика, а позиционирование: продукт явно сообщает «я не ещё один каталог ресторанов», снижая ложные ожидания и повышая осознанный выбор нового формата покупки.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rat-block">
+    <div class="rat-visual"><img src="images/cook-man1.jpg" alt="Простая форма добавления блюда"></div>
+    <div>
+      <span class="rat-num">06 / ПРОСТОТА ДЛЯ ПОВАРА БЕЗ БИЗНЕС-ОПЫТА</span>
+      <h2>Кабинет повара — «Сегодня», а не CRM-панель с метриками</h2>
+      <p>Большинство поваров — не предприниматели. Форма добавления блюда — 3 крупных шага с подсказками человеческим языком; заказы — карточки с двумя крупными кнопками, без статусных диаграмм и терминологии SKU/конверсии.</p>
+      <ul class="rat-list">
+        <li><i class="fa-solid fa-check"></i>Расписание доступности задаётся переключателями «Сегодня / Завтра / Выбрать день», а не таблицей-календарём.</li>
+        <li><i class="fa-solid fa-check"></i>Степпер порций — крупные круглые кнопки +/-, число видно издалека — удобно и для пользователей старшего возраста.</li>
+        <li><i class="fa-solid fa-check"></i>Аналитика на главном экране — 3 цифры («заработано сегодня», «заказов», «рейтинг»), не дашборд с графиками.</li>
+      </ul>
+      <div class="rat-why">
+        <b>Почему это важно бизнесу</b>
+        <p>Порог входа для стороны предложения (поваров) — главный риск p2p-маркетплейса. Каждый лишний шаг или непонятный термин в форме добавления блюда — это потенциальный отвалившийся повар, то есть потерянное предложение для всей платформы.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rat-block">
+    <div class="rat-visual"><img src="images/dish-syrniki.jpg" alt="Доступность и тёмная тема"></div>
+    <div>
+      <span class="rat-num">07 / ДОСТУПНОСТЬ И ТЁМНАЯ ТЕМА</span>
+      <h2>Контраст, крупный шрифт и тёмная тема — не «фича», а требование к аудитории</h2>
+      <p>Аудитория поваров может включать людей старшего возраста, для которых стандартные мелкие шрифты и низкий контраст доставочных приложений создают реальный барьер использования — не эстетическое неудобство, а причина отказа от продукта.</p>
+      <ul class="rat-list">
+        <li><i class="fa-solid fa-check"></i>Базовый размер текста — 15px (не 12–13px, как часто в delivery UI), крупные тап-зоны от 44px.</li>
+        <li><i class="fa-solid fa-check"></i>Тёмная тема реализована во всём UI-ките и прототипе через CSS-переменные — переключается мгновенно, без перезагрузки экрана.</li>
+        <li><i class="fa-solid fa-check"></i>Переключатель «Крупный текст» в настройках профиля — явный, а не спрятанный в системных настройках телефона.</li>
+      </ul>
+      <div class="rat-why">
+        <b>Почему это важно бизнесу</b>
+        <p>Доступность здесь напрямую расширяет предложение платформы: чем шире круг людей, которым физически удобно пользоваться приложением повара, тем больше потенциальных «соседских кухонь» на карте.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="avoid-box">
+    <i class="fa-solid fa-circle-exclamation"></i>
+    <div>
+      <h4>Чего мы сознательно не делали</h4>
+      <ul>
+        <li>Не копировали визуальный язык Яндекс.Еды / Delivery Club / Uber Eats — палитра, типографика и тон текста подобраны так, чтобы продукт не путали с классической доставкой из ресторанов.</li>
+        <li>Не перегружали интерфейс повара бизнес-метриками в стиле CRM — только 3 ключевые цифры и понятные действия.</li>
+        <li>Не строили ленту как безликий каталог позиций — каждая карточка обязательно показывает повара как человека, а не только товар.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:10px 0 60px;">
+    <a href="prototype.html" class="btn btn-primary"><i class="fa-solid fa-mobile-screen-button"></i> Посмотреть эти решения в прототипе</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Дизайн-проект «Соседи» — маркетплейс домашней еды · Обоснование решений v1.0
+</footer>
+
+<script src="js/theme.js"></script>
+</body>
+</html>
